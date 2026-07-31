@@ -1,3 +1,27 @@
 [gd_scene format=3 uid="uid://ber7k61aobpba"]
 
+[ext_resource type="Texture2D" uid="uid://bg072a047efvd" path="res://assets/art/backgrounds/pitch-background.png" id="1_0vacu"]
+[ext_resource type="Texture2D" uid="uid://g80pyhy5tfco" path="res://assets/art/backgrounds/pitch-pattern.png" id="2_3vuot"]
+[ext_resource type="Texture2D" uid="uid://j3e6xghj000v" path="res://assets/art/backgrounds/pitch-lines.png" id="3_xtira"]
+
 [node name="Word" type="Node2D" unique_id=370973008]
+
+[node name="Backgrounds" type="Node2D" parent="." unique_id=819462441]
+position = Vector2(-2, 0)
+
+[node name="Grass" type="Sprite2D" parent="Backgrounds" unique_id=221836424]
+modulate = Color(0.5176471, 0.8039216, 0.16470589, 1)
+position = Vector2(426, 181)
+texture = ExtResource("1_0vacu")
+
+[node name="Pattern" type="Sprite2D" parent="Backgrounds" unique_id=1628064903]
+modulate = Color(0.28235295, 0.60784316, 0, 1)
+position = Vector2(7, -18)
+texture = ExtResource("2_3vuot")
+centered = false
+
+[node name="Lines" type="Sprite2D" parent="Backgrounds" unique_id=1596117585]
+modulate = Color(0.9411765, 0.9411765, 0.9411765, 1)
+position = Vector2(7, -18)
+texture = ExtResource("3_xtira")
+centered = false
