@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://bjyd86qwhkkdl"]
 
 [ext_resource type="Texture2D" uid="uid://mbwjapa2m72p" path="res://assets/art/characters/soccer-player.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://but4nqeqw5v7p" path="res://scenes/player.gd" id="1_g2els"]
 
 [sub_resource type="Animation" id="Animation_3vyb7"]
-length = 0.001
+length = 0.6
+loop_mode = 1
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -11,10 +14,10 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0]
+"values": [6, 7, 8, 9, 10, 11]
 }
 
 [sub_resource type="Animation" id="Animation_g2els"]
@@ -35,10 +38,29 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3]
 }
 
+[sub_resource type="Animation" id="Animation_qhqgy"]
+resource_name = "run"
+length = 0.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9, 10, 11]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qhqgy"]
 _data = {
 &"RESET": SubResource("Animation_3vyb7"),
-&"idle": SubResource("Animation_g2els")
+&"idle": SubResource("Animation_g2els"),
+&"run": SubResource("Animation_qhqgy")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s5ppp"]
@@ -46,6 +68,7 @@ radius = 4.0
 height = 18.0
 
 [node name="player" type="CharacterBody2D" unique_id=1385432944]
+script = ExtResource("1_g2els")
 
 [node name="PlayerSprite" type="Sprite2D" parent="." unique_id=139161676]
 texture = ExtResource("1_3vyb7")
@@ -53,8 +76,10 @@ centered = false
 offset = Vector2(-16, -32)
 hframes = 6
 vframes = 13
+frame = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerSprite" unique_id=644897026]
+unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_qhqgy")
 autoplay = &"idle"
 
