@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bxej4vqwddu2n"]
+
+[ext_resource type="PackedScene" uid="uid://ber7k61aobpba" path="res://scenes/word.tscn" id="1_3q3ku"]
+
+[node name="Word" unique_id=370973008 instance=ExtResource("1_3q3ku")]
+
+[node name="Grass" parent="Backgrounds" parent_id_path=PackedInt32Array(819462441) index="0" unique_id=221836424]
+position = Vector2(425, 181)
+
+[node name="player2" parent="." index="2" unique_id=1884311943]
+control_scheme = 1

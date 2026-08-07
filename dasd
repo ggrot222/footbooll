@@ -1,0 +1,36 @@
+[1mdiff --git a/scenes/player.tscn b/scenes/player.tscn[m
+[1mindex cb0fceb..abb1a49 100644[m
+[1m--- a/scenes/player.tscn[m
+[1m+++ b/scenes/player.tscn[m
+[36m@@ -56,11 +56,30 @@[m [mtracks/0/keys = {[m
+ "values": [6, 7, 8, 9, 10, 11][m
+ }[m
+ [m
+[32m+[m[32m[sub_resource type="Animation" id="Animation_dqkch"][m
+[32m+[m[32mresource_name = "tackle"[m
+[32m+[m[32mlength = 0.1[m
+[32m+[m[32mloop_mode = 1[m
+[32m+[m[32mstep = 0.1[m
+[32m+[m[32mtracks/0/type = "value"[m
+[32m+[m[32mtracks/0/imported = false[m
+[32m+[m[32mtracks/0/enabled = true[m
+[32m+[m[32mtracks/0/path = NodePath(".:frame")[m
+[32m+[m[32mtracks/0/interp = 1[m
+[32m+[m[32mtracks/0/loop_wrap = true[m
+[32m+[m[32mtracks/0/keys = {[m
+[32m+[m[32m"times": PackedFloat32Array(0),[m
+[32m+[m[32m"transitions": PackedFloat32Array(1),[m
+[32m+[m[32m"update": 1,[m
+[32m+[m[32m"values": [30][m
+[32m+[m[32m}[m
+[32m+[m
+ [sub_resource type="AnimationLibrary" id="AnimationLibrary_qhqgy"][m
+ _data = {[m
+ &"RESET": SubResource("Animation_3vyb7"),[m
+ &"idle": SubResource("Animation_g2els"),[m
+[31m-&"run": SubResource("Animation_qhqgy")[m
+[32m+[m[32m&"run": SubResource("Animation_qhqgy"),[m
+[32m+[m[32m&"tackle": SubResource("Animation_dqkch")[m
+ }[m
+ [m
+ [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s5ppp"][m
